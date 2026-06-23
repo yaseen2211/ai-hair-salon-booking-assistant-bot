@@ -8,3 +8,4 @@ langchain-voyageai
 langchain-text-splitters
 chromadb
 python-dotenv
+protobuf<5
