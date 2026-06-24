@@ -41,6 +41,28 @@ Built with Claude (`claude-sonnet-4-6`), LangChain, Chroma (embedded vector stor
 
 ---
 
+## Prerequisites: getting your API keys
+
+This project needs two API keys before it will run. Both have free tiers, so you can get started without paying anything upfront.
+
+**Anthropic API key (for Claude):**
+
+1. Go to [console.anthropic.com](https://console.anthropic.com) and sign up or log in
+2. Navigate to **API Keys** in the left sidebar
+3. Click **Create Key**, give it a name, and copy the key immediately — it's only shown once
+4. New accounts typically come with some free credits; check **Plans & Billing** in the console for current details
+
+**Voyage AI key (for embeddings, used in RAG):**
+
+1. Go to [voyageai.com](https://www.voyageai.com) and sign up
+2. Once logged in, go to your dashboard and find **API Keys**
+3. Create a new key and copy it
+4. Voyage offers free usage credits for new accounts, which is enough for a small project like this knowledge base
+
+Keep both keys somewhere safe — you'll paste them into a `.env` file in the next step, and that file should never be committed to git (it's already excluded in `.gitignore`).
+
+---
+
 ## Setup
 
 ```bash
@@ -51,10 +73,22 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Add a `.env` file:
+Add a `.env` file in the project root with the two keys from the prerequisites step above:
 ANTHROPIC_API_KEY=your-key-here
 
 VOYAGE_API_KEY=your-key-here
+
+**Getting your Anthropic API key:**
+1. Go to [console.anthropic.com](https://console.anthropic.com) and sign up or log in
+2. Open **API Keys** in the left sidebar
+3. Click **Create Key**, name it, and copy it immediately — it's only shown once
+
+**Getting your Voyage AI key:**
+1. Go to [voyageai.com](https://www.voyageai.com) and sign up
+2. From your dashboard, open **API Keys**
+3. Create a new key and copy it
+
+Both platforms offer free credits for new accounts, enough to run this project without paying upfront. Never commit your `.env` file — it's already excluded in `.gitignore`.
 
 First run only — build the vector store:
 
